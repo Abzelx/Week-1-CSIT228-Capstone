@@ -11,7 +11,6 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.disasterreport.controller.MainController"
             prefWidth="1024.0" prefHeight="680.0">
 
     <!-- TOP: Navigation bar -->
@@ -21,10 +20,9 @@
             <Label text="Disaster Report System"
                    style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;"/>
             <Pane HBox.hgrow="ALWAYS"/>
-            <Label fx:id="loggedInUserLabel"
-                   text="Logged in as: User"
+            <Label text="Logged in as: User"
                    style="-fx-text-fill: #93c5fd; -fx-font-size: 13px;"/>
-            <Button text="Log Out" onAction="#handleLogout"
+            <Button text="Log Out"
                     style="-fx-font-size: 12px;"/>
         </HBox>
     </top>
@@ -37,28 +35,28 @@
             <Label text="NAVIGATION"
                    style="-fx-font-size: 11px; -fx-text-fill: #9ca3af;
                           -fx-font-weight: bold; -fx-padding: 4 8 8 8;"/>
-            <Button text="Dashboard" onAction="#showDashboard"
+            <Button text="Dashboard"
                     maxWidth="Infinity"
                     style="-fx-alignment: CENTER_LEFT; -fx-padding: 8 12;"/>
-            <Button text="Report Incident" onAction="#showReportForm"
+            <Button text="Report Incident"
                     maxWidth="Infinity"
                     style="-fx-alignment: CENTER_LEFT; -fx-padding: 8 12;"/>
-            <Button text="Incident List" onAction="#showIncidentList"
+            <Button text="Incident List"
                     maxWidth="Infinity"
                     style="-fx-alignment: CENTER_LEFT; -fx-padding: 8 12;"/>
             <Separator/>
-            <Button text="Generate Report" onAction="#showReportGenerator"
+            <Button text="Generate Report"
                     maxWidth="Infinity"
                     style="-fx-alignment: CENTER_LEFT; -fx-padding: 8 12;"/>
         </VBox>
     </left>
 
-    <!-- CENTER: Dynamic content area -->
+    <!-- CENTER: Content -->
     <center>
-        <VBox fx:id="contentArea" spacing="20.0"
+        <VBox spacing="20.0"
               style="-fx-padding: 24;">
 
-            <!-- Summary cards row -->
+            <!-- Summary cards -->
             <HBox spacing="16.0">
                 <VBox spacing="4.0"
                       style="-fx-background-color: white; -fx-border-color: #e2e8f0;
@@ -66,47 +64,47 @@
                              -fx-padding: 16; -fx-min-width: 140;">
                     <Label text="Total Reports"
                            style="-fx-font-size: 12px; -fx-text-fill: #6b7280;"/>
-                    <Label fx:id="totalIncidentsLabel" text="0"
+                    <Label text="0"
                            style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
                 </VBox>
+
                 <VBox spacing="4.0"
                       style="-fx-background-color: white; -fx-border-color: #e2e8f0;
                              -fx-border-radius: 8; -fx-background-radius: 8;
                              -fx-padding: 16; -fx-min-width: 140;">
                     <Label text="Active Incidents"
                            style="-fx-font-size: 12px; -fx-text-fill: #6b7280;"/>
-                    <Label fx:id="activeIncidentsLabel" text="0"
+                    <Label text="0"
                            style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
                 </VBox>
+
                 <VBox spacing="4.0"
                       style="-fx-background-color: white; -fx-border-color: #e2e8f0;
                              -fx-border-radius: 8; -fx-background-radius: 8;
                              -fx-padding: 16; -fx-min-width: 140;">
                     <Label text="Resolved"
                            style="-fx-font-size: 12px; -fx-text-fill: #6b7280;"/>
-                    <Label fx:id="resolvedIncidentsLabel" text="0"
+                    <Label text="0"
                            style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
                 </VBox>
             </HBox>
 
-            <!-- Recent incidents placeholder -->
+            <!-- Recent incidents -->
             <VBox spacing="8.0">
                 <Label text="Recent Incidents"
                        style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-                <Label fx:id="recentPlaceholder"
-                       text="No incidents reported yet."
+                <Label text="No incidents reported yet."
                        style="-fx-text-fill: #9ca3af; -fx-font-size: 13px;"/>
             </VBox>
 
         </VBox>
     </center>
 
-    <!-- BOTTOM: Status bar -->
+    <!-- BOTTOM -->
     <bottom>
         <HBox style="-fx-background-color: #f1f5f9; -fx-border-color: #e2e8f0;
                      -fx-border-width: 1 0 0 0; -fx-padding: 6 16;">
-            <Label fx:id="statusLabel"
-                   text="Ready"
+            <Label text="Ready"
                    style="-fx-font-size: 12px; -fx-text-fill: #6b7280;"/>
         </HBox>
     </bottom>
