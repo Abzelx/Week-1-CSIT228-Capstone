@@ -30,7 +30,8 @@ This desktop application provides a local community disaster monitoring platform
 
 ---
 
-##  Capstone Evaluation Criteria Mapping
+## 
+Capstone Evaluation Criteria Mapping
 
 This section outlines how the Local Disaster Reporting System implements the required CSIT228 Capstone Evaluation Criteria:
 
